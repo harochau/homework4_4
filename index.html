@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 4. Task 4.</title>
+</head>
+<body>
+    <label for="x-line" >Введите массив x</label>
+    <input type="text" class="text" id="xline" value="0.3, 5.2, 9.4, 8">
+    <br>
+    <label for="y-line" >Введите массив y</label>
+    <input type="text" class="text" id="yline" value="43,5,3.4, 8, 20">
+    <br>
+    <input type="button" style="margin-top: 10px;" value="Вычислить результат" onclick="calculateResult()">
+    <p id="p1"></p>
+    <script>
+ 
+        const regex_digits = /[+-]?\d+(?:\.\d+)?/g;   //  not work with -.2
+        const NUMERIC_REGEXP = /[-]{0,1}[\d]*[.]{0,1}[\d]+/g; // all good
+
+        function calculateResult(){      
+            let x,y;  
+            console.log(x = xline.value.match(NUMERIC_REGEXP));
+            console.log(y = yline.value.match(NUMERIC_REGEXP));
+  
+            let s1=0;
+            for (let i = 0; i<x.length;i++)
+            s1+= +x[i];        
+            
+            let s2=0;
+            for (let i = 0; i<y.length;i++)
+            s2+= +y[i];       
+            console.log(s2);
+            let res = (s1 + s2) / 2;
+            // return (s1 + s2) /2
+            // alert((s1 + s2) /2);
+            p1.innerHTML = "Результат выражения: "+res;
+    }
+
+
+
+    </script>
+</body>
+</html>
